@@ -1,6 +1,7 @@
 package com.silvastack.list.dto;
 
 import com.silvastack.list.entities.Game;
+import com.silvastack.list.projection.GameMinProjection;
 
 public class GameMinDto {
 	
@@ -21,6 +22,15 @@ public class GameMinDto {
 		imgUrl = entity.getImgUrl();
 		shortDescription = entity.getShortDescription();
 	}
+	
+	public GameMinDto(GameMinProjection projection) {
+		id = projection.getId();
+		title = projection.getTitle();
+		year = projection.getYear();
+		imgUrl = projection.getImgUrl();
+		shortDescription = projection.getShortDescription();
+	}
+
 
 	public Long getId() {
 		return id;
